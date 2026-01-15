@@ -308,43 +308,43 @@ const TravelCoordinator = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             <div>
-              <label className="block text-xs font-medium text-gray-600 mb-1">Person</label>
+              <label className="block text-xs font-semibold text-gray-900 mb-1">Person</label>
               <select 
                 value={filterPerson}
                 onChange={(e) => setFilterPerson(e.target.value)}
-                className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full px-3 py-2 text-sm border border-gray-400 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 bg-white"
               >
-                <option value="">All travelers</option>
+                <option value="" className="text-gray-900">All travelers</option>
                 {allTravelers.map(person => (
-                  <option key={person} value={person}>{person}</option>
+                  <option key={person} value={person} className="text-gray-900">{person}</option>
                 ))}
               </select>
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-gray-600 mb-1">Month</label>
+              <label className="block text-xs font-semibold text-gray-900 mb-1">Month</label>
               <select 
                 value={filterMonth}
                 onChange={(e) => setFilterMonth(e.target.value)}
-                className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full px-3 py-2 text-sm border border-gray-400 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 bg-white"
               >
-                <option value="">All months</option>
+                <option value="" className="text-gray-900">All months</option>
                 {months.map(month => (
-                  <option key={month.value} value={month.value}>{month.label}</option>
+                  <option key={month.value} value={month.value} className="text-gray-900">{month.label}</option>
                 ))}
               </select>
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-gray-600 mb-1">Country</label>
+              <label className="block text-xs font-semibold text-gray-900 mb-1">Country</label>
               <select 
                 value={filterCountry}
                 onChange={(e) => setFilterCountry(e.target.value)}
-                className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full px-3 py-2 text-sm border border-gray-400 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 bg-white"
               >
-                <option value="">All countries</option>
+                <option value="" className="text-gray-900">All countries</option>
                 {allCountries.map(country => (
-                  <option key={country} value={country}>{country}</option>
+                  <option key={country} value={country} className="text-gray-900">{country}</option>
                 ))}
               </select>
             </div>
@@ -353,7 +353,7 @@ const TravelCoordinator = () => {
               <div className="flex items-end">
                 <button
                   onClick={clearFilters}
-                  className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium text-gray-700"
+                  className="w-full px-3 py-2 text-sm border border-gray-400 rounded-lg hover:bg-gray-50 transition-colors font-bold text-gray-900"
                 >
                   Clear filters
                 </button>
@@ -366,91 +366,91 @@ const TravelCoordinator = () => {
         {showAddForm && (
           <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-bold text-gray-800">Add New Trip</h2>
-              <button onClick={() => setShowAddForm(false)} className="text-gray-500 hover:text-gray-700">
+              <h2 className="text-xl font-bold text-gray-900">Add New Trip</h2>
+              <button onClick={() => setShowAddForm(false)} className="text-gray-500 hover:text-gray-900">
                 <X size={24} />
               </button>
             </div>
             
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Trip Name *</label>
+                <label className="block text-sm font-bold text-gray-900 mb-2">Trip Name *</label>
                 <input
                   type="text"
                   value={newTrip.name}
                   onChange={(e) => setNewTrip({ ...newTrip, name: e.target.value })}
                   placeholder="e.g., Paris Weekend"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 placeholder-gray-500"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">City *</label>
+                  <label className="block text-sm font-bold text-gray-900 mb-2">City *</label>
                   <input
                     type="text"
                     value={newTrip.city}
                     onChange={(e) => setNewTrip({ ...newTrip, city: e.target.value })}
                     placeholder="e.g., Paris"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 placeholder-gray-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Country *</label>
+                  <label className="block text-sm font-bold text-gray-900 mb-2">Country *</label>
                   <input
                     type="text"
                     value={newTrip.country}
                     onChange={(e) => setNewTrip({ ...newTrip, country: e.target.value })}
                     placeholder="e.g., France"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 placeholder-gray-500"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Trip Start Date *</label>
+                  <label className="block text-sm font-bold text-gray-900 mb-2">Trip Start Date *</label>
                   <input
                     type="date"
                     value={newTrip.startDate}
                     onChange={(e) => setNewTrip({ ...newTrip, startDate: e.target.value })}
                     min="2026-01-16"
                     max="2026-05-31"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Trip End Date *</label>
+                  <label className="block text-sm font-bold text-gray-900 mb-2">Trip End Date *</label>
                   <input
                     type="date"
                     value={newTrip.endDate}
                     onChange={(e) => setNewTrip({ ...newTrip, endDate: e.target.value })}
                     min="2026-01-16"
                     max="2026-05-31"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Initial Travelers *</label>
-                <p className="text-xs text-gray-500 mb-3">You can specify custom dates for each traveler, or leave blank to use trip dates</p>
+                <label className="block text-sm font-bold text-gray-900 mb-2">Initial Travelers *</label>
+                <p className="text-xs text-gray-700 font-medium mb-3">You can specify custom dates for each traveler, or leave blank to use trip dates</p>
                 {newTrip.travelers.map((traveler, index) => (
-                  <div key={index} className="border border-gray-200 rounded-lg p-3 mb-3">
+                  <div key={index} className="border border-gray-300 rounded-lg p-3 mb-3 bg-gray-50">
                     <div className="flex gap-2 mb-2">
                       <input
                         type="text"
                         value={traveler.name}
                         onChange={(e) => updateTraveler(index, 'name', e.target.value)}
                         placeholder="Enter name"
-                        className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                        className="flex-1 px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 placeholder-gray-500"
                       />
                       {newTrip.travelers.length > 1 && (
                         <button
                           onClick={() => removeTravelerField(index)}
-                          className="px-3 py-2 text-red-600 hover:bg-red-50 rounded-lg"
+                          className="px-3 py-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
                         >
                           <X size={20} />
                         </button>
@@ -464,7 +464,7 @@ const TravelCoordinator = () => {
                         placeholder="Start date (optional)"
                         min="2026-01-16"
                         max="2026-05-31"
-                        className="px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                        className="px-3 py-1.5 text-sm border border-gray-400 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 bg-white"
                       />
                       <input
                         type="date"
@@ -473,14 +473,14 @@ const TravelCoordinator = () => {
                         placeholder="End date (optional)"
                         min="2026-01-16"
                         max="2026-05-31"
-                        className="px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                        className="px-3 py-1.5 text-sm border border-gray-400 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 bg-white"
                       />
                     </div>
                   </div>
                 ))}
                 <button
                   onClick={addTravelerField}
-                  className="text-indigo-600 hover:text-indigo-700 text-sm font-medium"
+                  className="text-indigo-700 hover:text-indigo-900 text-sm font-bold"
                 >
                   + Add another traveler
                 </button>
@@ -489,13 +489,13 @@ const TravelCoordinator = () => {
               <div className="flex gap-3 pt-4">
                 <button
                   onClick={addTrip}
-                  className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition-colors font-medium"
+                  className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition-colors font-bold shadow-md"
                 >
                   Save Trip
                 </button>
                 <button
                   onClick={() => setShowAddForm(false)}
-                  className="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+                  className="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors font-bold text-gray-900"
                 >
                   Cancel
                 </button>
@@ -509,63 +509,63 @@ const TravelCoordinator = () => {
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
             <div className="bg-white rounded-lg shadow-xl p-6 max-w-md w-full">
               <div className="flex justify-between items-center mb-4">
-                <h2 className="text-xl font-bold text-gray-800">Join Trip</h2>
-                <button onClick={() => setJoiningTrip(null)} className="text-gray-500 hover:text-gray-700">
+                <h2 className="text-xl font-bold text-gray-900">Join Trip</h2>
+                <button onClick={() => setJoiningTrip(null)} className="text-gray-500 hover:text-gray-900">
                   <X size={24} />
                 </button>
               </div>
 
               <div className="mb-4">
-                <p className="text-gray-600 mb-1"><strong>{joiningTrip.name}</strong></p>
-                <p className="text-sm text-gray-500">{joiningTrip.city}, {joiningTrip.country}</p>
-                <p className="text-sm text-gray-500">Trip dates: {formatDateRange(joiningTrip.startDate, joiningTrip.endDate)}</p>
+                <p className="text-gray-900 mb-1"><strong>{joiningTrip.name}</strong></p>
+                <p className="text-sm text-gray-800">{joiningTrip.city}, {joiningTrip.country}</p>
+                <p className="text-sm text-gray-800">Trip dates: {formatDateRange(joiningTrip.startDate, joiningTrip.endDate)}</p>
               </div>
 
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Your Name *</label>
+                  <label className="block text-sm font-bold text-gray-900 mb-2">Your Name *</label>
                   <input
                     type="text"
                     value={joinForm.name}
                     onChange={(e) => setJoinForm({ ...joinForm, name: e.target.value })}
                     placeholder="Enter your name"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-900 placeholder-gray-500"
                   />
                 </div>
 
                 <div>
-                  <label className="flex items-center gap-2 mb-3">
+                  <label className="flex items-center gap-2 mb-3 cursor-pointer">
                     <input
                       type="checkbox"
                       checked={joinForm.useDefaultDates}
                       onChange={(e) => setJoinForm({ ...joinForm, useDefaultDates: e.target.checked })}
                       className="w-4 h-4 text-indigo-600"
                     />
-                    <span className="text-sm font-medium text-gray-700">Use trip dates</span>
+                    <span className="text-sm font-bold text-gray-900">Use trip dates</span>
                   </label>
 
                   {!joinForm.useDefaultDates && (
                     <div className="grid grid-cols-2 gap-3 pl-6">
                       <div>
-                        <label className="block text-xs font-medium text-gray-700 mb-1">Your Start Date</label>
+                        <label className="block text-xs font-bold text-gray-900 mb-1">Your Start Date</label>
                         <input
                           type="date"
                           value={joinForm.startDate}
                           onChange={(e) => setJoinForm({ ...joinForm, startDate: e.target.value })}
                           min="2026-01-16"
                           max="2026-05-31"
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm"
+                          className="w-full px-3 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-900 bg-white"
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-medium text-gray-700 mb-1">Your End Date</label>
+                        <label className="block text-xs font-bold text-gray-900 mb-1">Your End Date</label>
                         <input
                           type="date"
                           value={joinForm.endDate}
                           onChange={(e) => setJoinForm({ ...joinForm, endDate: e.target.value })}
                           min="2026-01-16"
                           max="2026-05-31"
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm"
+                          className="w-full px-3 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-900 bg-white"
                         />
                       </div>
                     </div>
@@ -575,13 +575,13 @@ const TravelCoordinator = () => {
                 <div className="flex gap-3 pt-4">
                   <button
                     onClick={confirmJoinTrip}
-                    className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors font-medium"
+                    className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors font-bold shadow-md"
                   >
                     Confirm
                   </button>
                   <button
                     onClick={() => setJoiningTrip(null)}
-                    className="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+                    className="px-6 py-2 border border-gray-400 rounded-lg hover:bg-gray-100 transition-colors font-bold text-gray-900"
                   >
                     Cancel
                   </button>
